@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colorize-table</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Town</th>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Sofia</td>
+    </tr>
+    <tr>
+        <td>Nick</td>
+        <td>Varna</td>
+    </tr>
+    <tr>
+        <td>Didi</td>
+        <td>Ruse</td>
+    </tr>
+    <tr>
+        <td>Tedy</td>
+        <td>Varna</td>
+    </tr>
+</table>
+<button onclick="colorize()">Colorize</button>
+<script>
+    function colorize() {
+        let tableContents = document.querySelectorAll('td');
+
+        for (let i = 0; i < tableContents.length; i += 4) {
+
+            tableContents[i].style.backgroundColor = "#F5DEB3";
+            tableContents[i + 1].style.backgroundColor = "#F5DEB3";
+
+        }
+    }
+</script>
+
+</body>
+</html>

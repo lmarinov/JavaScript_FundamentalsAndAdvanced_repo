@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collect List Items</title>
+</head>
+<body>
+<ul id="items">
+    <li>first item</li>
+    <li>second item</li>
+    <li>third item</li>
+</ul>
+<textarea id="result"></textarea>
+<br>
+<button onclick="extractText()">Extract Text</button>
+<script>
+    function extractText() {
+       let itemNodes = document.querySelectorAll("ul#items li");
+       let textArea = document.querySelector("#result");
+       document.getElementById("items").getElementsByTagName("li");
+       // could be done with getElements in stead of querySelector, however,
+       // querySelector would save me a bit of code writing in this case
+       // remember that queries returned by querySelector are NOT live.
+       // Changes to static elements are only written back to the DOM
+       // after the current script is done executing.
+       // These extra copy and write steps have some small,
+       // and generally negligible, effect on performance.
+        for (let itemNode of itemNodes) {
+            textArea.value += itemNode.textContent + "\n";
+        }
+    }
+</script>
+
+</body>
+</html>
